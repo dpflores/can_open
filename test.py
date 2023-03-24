@@ -18,19 +18,14 @@
 
 # import the library
 
-import can
+from socket_can import *
 
-# Definir la interfaz de red CAN
-can_interface = 'can0'
+# CAN configuration
+can_id = 0x10
+can_frame_fmt = "=IB3x8s"
+can_port = "can0"
 
-# Crear un bus CAN
-bus = can.interface.Bus(can_interface, bustype='socketcan_native')
+can = CAN(can_frame_fmt, can_port, can_id)
 
-# Definir el ID del mensaje a buscar (A5 en hexadecimal)
-message_id = 0xA5
-
-# Leer los mensajes del bus CAN y filtrar por ID
 while True:
-    message = bus.recv()
-    if message.arbitration_id == message_id:
-        print('Datos recibidos: {}'.format(message.data.hex()))
+    print(can.get_vel(sender_id=0xA5))
