@@ -13,7 +13,7 @@ can_open = CANOPEN(port, id)
 #     print(f"data: {data}")
 
 while True:
-    data = can_open.get_raw_data(0xA5)
+    data = can_open.get_raw_data(0x104)
     print(f"data: {data}")
 
 
