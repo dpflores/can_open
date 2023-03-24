@@ -20,7 +20,7 @@
 import can
 
 # Configuración del bus CAN
-bus = can.interface.Bus(channel='can1', bustype='socketcan')
+bus = can.interface.Bus(channel='can0', bustype='socketcan')
 
 # ID del mensaje a leer
 message_id = 0xA5
@@ -28,6 +28,6 @@ message_id = 0xA5
 # Escucha de los mensajes en el bus
 while True:
     message = bus.recv()
-    if message.arbitration_id == message_id:
-        print(f"ID: {message.arbitration_id}, DLC: {message.dlc}, Data: {message.data}")
+    
+    print(f"ID: {message.arbitration_id}, DLC: {message.dlc}, Data: {message.data}")
 
