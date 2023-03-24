@@ -23,7 +23,7 @@ from socket_can import *
 # CAN configuration
 can_id = 0x10
 can_frame_fmt = "=IB3x8s"
-can_port = "can0"
+can_port = "can1"
 
 can = CAN(can_frame_fmt, can_port, can_id)
 
