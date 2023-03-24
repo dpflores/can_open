@@ -9,7 +9,7 @@ class CANOPEN():
         self.node = network.add_node(node_id, 'JD2xxx_v1.0.eds')
         
 
-    def get_prop_accel(self):
+    def get_data_raw(self, ):
         x = self.node.sdo[0x3403].raw * accel_resolution
         y = self.node.sdo[0x3404].raw * accel_resolution
         z = self.node.sdo[0x3405].raw * accel_resolution
