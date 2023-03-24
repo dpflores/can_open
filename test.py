@@ -15,6 +15,7 @@ from can_open import *
 import canopen
 
 network = canopen.Network()
+network.connect(channel='can0', bustype='socketcan')
 
 # This will attempt to read an SDO from nodes 1 - 127
 network.scanner.search()
