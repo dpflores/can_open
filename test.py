@@ -8,7 +8,7 @@ can_open = CANOPEN(port, id)
 
 
 while True:
-    data = can_jd.get_raw_data(0x3403)
+    data = can_open.get_raw_data(0x3403)
     print(f"data: {data}")
 
 
