@@ -29,7 +29,7 @@ def dissect_can_frame(frame):
     return (can_id, can_dlc, data[:can_dlc])
 
 s = socket.socket (socket.AF_CAN, socket.SOCK_RAW, socket.CAN_RAW)
-s.bind(("can0",))
+s.bind(("can1",))
 
 while True:
     cf, addr = s.recvfrom(16)
