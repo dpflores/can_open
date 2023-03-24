@@ -15,7 +15,7 @@ from can_open import *
 import can
 
 # Configuración del bus CAN
-bus = can.interface.Bus(channel='can0', bustype='socketcan')
+bus = can.interface.Bus(channel='can1', bustype='socketcan')
 
 # Escucha de los mensajes en el bus
 while True:
