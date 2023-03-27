@@ -34,14 +34,14 @@ s.bind(("can1",))
 while True:
     cf, addr = s.recvfrom(16)
     can_id = dissect_can_frame(cf)[0]
-    if can_id == 165:
-        can_dlc = dissect_can_frame(cf)[1]
-        dataL = hex((dissect_can_frame(cf)[2])[0])#Data LSB
-        dataH = hex((dissect_can_frame(cf)[2])[1])#Data HSB
-   
-        #data= (int (dataH,16))<<8| int (dataL,16)
-        data = int (dataH,16) + int (dataL,16)
+    
+    can_dlc = dissect_can_frame(cf)[1]
+    dataL = hex((dissect_can_frame(cf)[2])[0])#Data LSB
+    dataH = hex((dissect_can_frame(cf)[2])[1])#Data HSB
 
-        #print (dataL)
-        #print(dataH )
-        print (data)
+    #data= (int (dataH,16))<<8| int (dataL,16)
+    data = int (dataH,16) + int (dataL,16)
+
+    #print (dataL)
+    #print(dataH)
+    print (data)
